@@ -71,8 +71,6 @@ namespace :clockwork do
   end
 
   task :add_default_hooks do
-    after 'deploy:stop', 'clockwork:stop'
-    after 'deploy:start', 'clockwork:start'
-    after 'deploy:restart', 'clockwork:restart'
+    after 'deploy:publishing', 'clockwork:restart'
   end
 end

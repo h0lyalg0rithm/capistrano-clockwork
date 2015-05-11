@@ -1,0 +1,1 @@
+load File.expand_path("../tasks/capistrano-clockwork.rake", __FILE__)

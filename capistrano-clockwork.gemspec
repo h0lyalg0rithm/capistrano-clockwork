@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split($/)
   s.require_path= ["lib"]
   s.add_dependency 'capistrano', '~> 3.1'
+  s.add_dependency 'daemons', '~> 1.2'
 end

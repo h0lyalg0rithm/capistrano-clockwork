@@ -8,10 +8,12 @@ Integrate clockwork gem with capistrano
 
 Add this line to your application's Gemfile:
 
+    gem 'daemons'
     gem 'capistrano-clockwork'
 
 or:
 
+    gem 'daemons'
     gem 'capistrano-clockwork', group: :development
 
 And then execute:

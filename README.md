@@ -16,6 +16,7 @@ or:
     gem 'daemons'
     gem 'capistrano-clockwork', group: :development
 
+Make sure the daemons gem is required in production.
 And then execute:
 
     $ bundle
@@ -41,14 +42,16 @@ To override the defaults just change it in your Capfile
 ```ruby
 
    set :clockwork_file, "clockwork.rb"
+   
 ```
 ## To remove the default hooks
 
 By default the clockwork daemon is restarted everytime you deploy to your server
 ```ruby
 
-	:clockwork_default_hooks = false
+	set :clockwork_default_hooks, false
 ```
+
 ## Other capistrano tasks
 By default the clockwork daemon is restarted everytime you deploy to your server
 ```bash

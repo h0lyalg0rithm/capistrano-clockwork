@@ -20,7 +20,7 @@ namespace :clockwork do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log stop"
+          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log stop"
         end
       end
     end
@@ -31,7 +31,7 @@ namespace :clockwork do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log status"
+          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log status"
         end
       end
     end
@@ -42,7 +42,7 @@ namespace :clockwork do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log start"
+          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log start"
         end
       end
     end
@@ -53,7 +53,7 @@ namespace :clockwork do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log restart"
+          execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log restart"
         end
       end
     end

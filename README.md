@@ -33,23 +33,32 @@ By default the gem expects a the clockwork script to be present in the lib folde
 
 ```ruby
 
-	:clockwork_default_hooks = true
+    :clockwork_default_hooks = true
     :clockwork_file = "lib/clockwork.rb"
+    :clockwork_role = :app
 ```
 To override the defaults just change it in your Capfile
 
 ## To Change the clockscript location
 ```ruby
 
-   set :clockwork_file, "clockwork.rb"
-   
+    set :clockwork_file, "clockwork.rb"
+
 ```
 ## To remove the default hooks
 
 By default the clockwork daemon is restarted everytime you deploy to your server
 ```ruby
 
-	set :clockwork_default_hooks, false
+    set :clockwork_default_hooks, false
+```
+
+## To change server role
+
+By default the clockwork will be deployed with `:app` role
+```ruby
+
+    set :clockwork_role, :app
 ```
 
 ## Other capistrano tasks

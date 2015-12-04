@@ -1,7 +1,8 @@
 namespace :load do
   task :defaults do
-    set :clockwork_default_hooks, -> { true } 
+    set :clockwork_default_hooks, -> { true }
     set :clockwork_file, -> { "lib/clockwork.rb" }
+    set :clockwork_role, -> { :app }
   end
 end
 
@@ -17,7 +18,7 @@ end
 namespace :clockwork do
   desc "Stop clockwork"
   task :stop do
-    on roles(:app) do
+    on roles(fetch(:clockwork_role)) do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log stop"
@@ -28,7 +29,7 @@ namespace :clockwork do
 
   desc "Clockwork status"
   task :status do
-    on roles(:app) do
+    on roles(fetch(:clockwork_role)) do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log status"
@@ -39,7 +40,7 @@ namespace :clockwork do
 
   desc "Start clockwork"
   task :start do
-    on roles(:app) do
+    on roles(fetch(:clockwork_role)) do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log start"
@@ -50,7 +51,7 @@ namespace :clockwork do
 
   desc "Restart clockwork"
   task :restart do
-    on roles(:app) do
+    on roles(fetch(:clockwork_role)) do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :bundle, :exec, :clockworkd, "-c #{fetch(:clockwork_file)} --dir=. --pid-dir=#{cw_pid_dir} --log-dir=#{cw_log_dir} --log restart"

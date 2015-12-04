@@ -3,8 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'capistrano-clockwork'
-  s.version     = '0.0.5'
-  s.date        = '2015-05-12'
+  s.version     = '1.0.0'
+  s.date        = '2015-12-05'
   s.summary     = "Capistrano plugin to manage clockwork"
   s.description = "Capistrano plugin to manage clockwork"
   s.authors     = ["Suraj Shirvankar"]

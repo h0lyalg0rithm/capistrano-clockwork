@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'capistrano-clockwork'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2015-12-05'
   s.summary     = "Capistrano plugin to manage clockwork"
   s.description = "Capistrano plugin to manage clockwork"
@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
 
   s.files       = `git ls-files`.split($/)
   s.require_path= ["lib"]
-  s.add_dependency 'capistrano', '~> 3.1'
+  s.add_dependency 'capistrano', '~> 3.5'
   s.add_dependency 'daemons', '~> 1.2'
 end

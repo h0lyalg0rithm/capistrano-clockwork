@@ -6,6 +6,8 @@ Integrate clockwork gem with capistrano
 
 ## Installation
 
+[![Dependency Status](https://gemnasium.com/badges/github.com/h0lyalg0rithm/capistrano-clockwork.svg)](https://gemnasium.com/github.com/h0lyalg0rithm/capistrano-clockwork)
+
 Add this line to your application's Gemfile:
 
     gem 'daemons'
